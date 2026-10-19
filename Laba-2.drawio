@@ -1,0 +1,247 @@
+<mxfile host="app.diagrams.net" agent="ChatGPT">
+  <diagram id="uml" name="UML Classes">
+    <mxGraphModel dx="4971" dy="2750" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="2200" pageHeight="3000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="class_EnemyBullet" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;EnemyBullet&lt;/div&gt;&lt;hr/&gt;&lt;i&gt;нет собственных полей&lt;/i&gt;&lt;br/&gt;&lt;hr/&gt;+_Ready(): void&lt;br/&gt;+_PhysicsProcess(double delta): void&lt;br/&gt;-OnBodyEntered(Node2D body): void&lt;br/&gt;-_On_Collision(Area2D area): void&lt;br/&gt;-_On_Screen_Leave(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="181" width="355" x="50" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Field" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Field&lt;/div&gt;&lt;hr/&gt;-EnemyTimer: Timer&lt;br/&gt;-PlatformTimer: Timer&lt;br/&gt;-ObstacleTimer: Timer&lt;br/&gt;-SpawnNode: Node&lt;br/&gt;-Enemies: Godot.Collections.Array&amp;lt;PackedScene&amp;gt;&lt;br/&gt;-Platforms: Godot.Collections.Array&amp;lt;PackedScene&amp;gt;&lt;br/&gt;-Obstacles: Godot.Collections.Array&amp;lt;PackedScene&amp;gt;&lt;br/&gt;-random: RandomNumberGenerator&lt;br/&gt;&lt;hr/&gt;+_Ready(): void&lt;br/&gt;-_OnSpawnEnemyTimerTimeout(): void&lt;br/&gt;-_OnSpawnPlatformTimerTimeout(): void&lt;br/&gt;-_OnSpawnObstacleTimerTimeout(): void&lt;br/&gt;-SpawnEnemy(): void&lt;br/&gt;-SpawnPlatform(): void&lt;br/&gt;-SpawnObstacle(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="361" width="355" x="450" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="class_MovingObject" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;MovingObject&lt;/div&gt;&lt;hr/&gt;#velocity: Vector2&lt;br/&gt;&lt;hr/&gt;+_PhysicsProcess(double delta): void&lt;br/&gt;#Move(float delta): void&lt;br/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;+_Ready(): void&lt;br/&gt;-_On_Sreen_Exited(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="181" width="355" x="850" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="class_bullet" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;bullet&lt;/div&gt;&lt;hr/&gt;-Damage: float&lt;br/&gt;&lt;hr/&gt;+_PhysicsProcess(double delta): void&lt;br/&gt;-_On_Collision(Area2D area): void&lt;br/&gt;-_On_Screen_Leave(): void&lt;br/&gt;+SetDamage(float damage): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="161" width="355" x="1250" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="class_player" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;player&lt;/div&gt;&lt;hr/&gt;-MovementSpeed: float&lt;br/&gt;-Gravity: float&lt;br/&gt;-JumpVelocity: float&lt;br/&gt;-ReloadTime: float&lt;br/&gt;-_velocity: Vector2&lt;br/&gt;-BulletSpeed: float&lt;br/&gt;-BulletDamage: float&lt;br/&gt;-BulletScene: PackedScene&lt;br/&gt;&lt;hr/&gt;+_PhysicsProcess(double delta): void&lt;br/&gt;-Jump(Vector2 Velocity): Vector2&lt;br/&gt;+_Input(InputEvent @event): void&lt;br/&gt;-Shoot(): void&lt;br/&gt;+TakeDamage(): void&lt;br/&gt;-_On_Collision(Area2D area): void&lt;br/&gt;-Die(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="361" width="355" x="1650" y="60" as="geometry" />
+        </mxCell>
+        <mxCell id="class_BenignObject" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;BenignObject&lt;/div&gt;&lt;hr/&gt;&lt;i&gt;нет собственных полей&lt;/i&gt;&lt;br/&gt;&lt;hr/&gt;&lt;i&gt;нет собственных методов&lt;/i&gt;" vertex="1">
+          <mxGeometry height="101" width="355" x="1180" y="650" as="geometry" />
+        </mxCell>
+        <mxCell id="class_DamagingObject" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;DamagingObject&lt;/div&gt;&lt;hr/&gt;&lt;i&gt;нет собственных полей&lt;/i&gt;&lt;br/&gt;&lt;hr/&gt;&lt;i&gt;нет собственных методов&lt;/i&gt;" vertex="1">
+          <mxGeometry height="101" width="355" x="450" y="670" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Enemy" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Enemy&lt;/div&gt;&lt;hr/&gt;#Health: float&lt;br/&gt;&lt;hr/&gt;+TakeDamage(float damage): void&lt;br/&gt;-Die(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="121" width="355" x="50" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Obstacle" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Obstacle&lt;/div&gt;&lt;hr/&gt;&lt;i&gt;нет собственных полей&lt;/i&gt;&lt;br/&gt;&lt;hr/&gt;&lt;i&gt;нет собственных методов&lt;/i&gt;" vertex="1">
+          <mxGeometry height="101" width="355" x="450" y="1200" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Platform" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Platform&lt;/div&gt;&lt;hr/&gt;-SpawnX: float&lt;br/&gt;-MinSpawnY: float&lt;br/&gt;-MaxSpawnY: float&lt;br/&gt;&lt;hr/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="1340" y="1210" as="geometry" />
+        </mxCell>
+        <mxCell id="class_FlyingEnemy" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;FlyingEnemy&lt;/div&gt;&lt;hr/&gt;-SpawnX: float&lt;br/&gt;-MinSpawnY: float&lt;br/&gt;-MaxSpawnY: float&lt;br/&gt;&lt;hr/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="50" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="class_GroundObstacle" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;GroundObstacle&lt;/div&gt;&lt;hr/&gt;-SpawnX: float&lt;br/&gt;-SpawnY: float&lt;br/&gt;&lt;hr/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;" vertex="1">
+          <mxGeometry height="121" width="355" x="1250" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="class_VerticalPlatform" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;VerticalPlatform&lt;/div&gt;&lt;hr/&gt;-HorizontalSpeed: float&lt;br/&gt;&lt;hr/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="101" width="355" x="1750" y="1370" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Bat" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Bat&lt;/div&gt;&lt;hr/&gt;-VerticalSpeed: float&lt;br/&gt;-time: float&lt;br/&gt;&lt;hr/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="121" width="355" x="50" y="2340" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Dragon" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Dragon&lt;/div&gt;&lt;hr/&gt;-HorizontalSpeed: float&lt;br/&gt;-BulletSpeed: float&lt;br/&gt;-ShootInterval: float&lt;br/&gt;-bulletScene: PackedScene&lt;br/&gt;-shootCooldown: float&lt;br/&gt;&lt;hr/&gt;+_Ready(): void&lt;br/&gt;#Move(float delta): void&lt;br/&gt;-Shoot(): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="221" width="355" x="450" y="2340" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Rock" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Rock&lt;/div&gt;&lt;hr/&gt;&lt;i&gt;нет собственных полей&lt;/i&gt;&lt;br/&gt;&lt;hr/&gt;&lt;i&gt;нет собственных методов&lt;/i&gt;" vertex="1">
+          <mxGeometry height="101" width="355" x="2345" y="2350" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Saw" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Saw&lt;/div&gt;&lt;hr/&gt;-MovementMode: MovementType&lt;br/&gt;-VerticalSpeed: float&lt;br/&gt;-HorizontalSpeed: float&lt;br/&gt;-time: float&lt;br/&gt;&lt;hr/&gt;+_Ready(): void&lt;br/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="181" width="355" x="1670" y="2340" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Spikes" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Spikes&lt;/div&gt;&lt;hr/&gt;-VerticalSpeed: float&lt;br/&gt;-HorizontalSpeed: float&lt;br/&gt;-time: float&lt;br/&gt;&lt;hr/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="2730" y="2350" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Warg" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Warg&lt;/div&gt;&lt;hr/&gt;-ChaseSpeed: float&lt;br/&gt;-DetectionRange: float&lt;br/&gt;-HorizontalSpeed: float&lt;br/&gt;&lt;hr/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="860" y="2340" as="geometry" />
+        </mxCell>
+        <mxCell id="class_Zombie" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;Zombie&lt;/div&gt;&lt;hr/&gt;-HorizontalSpeed: float&lt;br/&gt;-DashInterval: float&lt;br/&gt;-time: float&lt;br/&gt;&lt;hr/&gt;#Move(float delta): void&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="1260" y="2340" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_Spikes" edge="1" parent="1" source="class_Spikes" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_GroundObstacle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2880" y="1960" />
+              <mxPoint x="1427.5" y="1960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_VerticalPlatform" edge="1" parent="1" source="class_VerticalPlatform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_Platform">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_Warg" edge="1" parent="1" source="class_Warg" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_GroundEnemy">
+          <mxGeometry relative="1" x="-0.3165" as="geometry">
+            <Array as="points">
+              <mxPoint x="900" y="2080" />
+              <mxPoint x="617.5" y="2080" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_Saw" edge="1" parent="1" source="class_Saw" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_FlyingObstacle">
+          <mxGeometry relative="1" x="-0.2002" as="geometry">
+            <Array as="points">
+              <mxPoint x="1840" y="2020" />
+              <mxPoint x="1027.5" y="2020" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_Rock" edge="1" parent="1" source="class_Rock" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_GroundObstacle">
+          <mxGeometry relative="1" x="0.0007" as="geometry">
+            <Array as="points">
+              <mxPoint x="2522.5" y="1960" />
+              <mxPoint x="1427.5" y="1960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_Bat" edge="1" parent="1" source="class_Bat" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_FlyingEnemy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_Dragon" edge="1" parent="1" source="class_Dragon" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_FlyingEnemy">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="627.5" y="2200" />
+              <mxPoint x="227.5" y="2200" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_GroundObstacle" edge="1" parent="1" source="class_GroundObstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_Obstacle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1427.5" y="1540" />
+              <mxPoint x="627.5" y="1540" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_FlyingEnemy" edge="1" parent="1" source="class_FlyingEnemy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_Enemy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_Enemy" edge="1" parent="1" source="class_Enemy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_DamagingObject">
+          <mxGeometry relative="1" x="-0.0862" as="geometry">
+            <Array as="points">
+              <mxPoint x="180" y="720.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_GroundEnemy" edge="1" parent="1" source="class_GroundEnemy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_Enemy">
+          <mxGeometry relative="1" x="0.0012" as="geometry">
+            <Array as="points">
+              <mxPoint x="617.5" y="1610" />
+              <mxPoint x="227.5" y="1610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_Platform" edge="1" parent="1" source="class_Platform" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_BenignObject">
+          <mxGeometry relative="1" x="0.0005" as="geometry">
+            <Array as="points">
+              <mxPoint x="1517.5" y="960" />
+              <mxPoint x="1310" y="960" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_Obstacle" edge="1" parent="1" source="class_Obstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_DamagingObject">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="edge_DamagingObject" edge="1" parent="1" source="class_DamagingObject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_MovingObject">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="720.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="edge_BenignObject" edge="1" parent="1" source="class_BenignObject" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;" target="class_MovingObject">
+          <mxGeometry relative="1" x="-0.1325" as="geometry">
+            <Array as="points">
+              <mxPoint x="1040" y="720" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dependency_Dragon_EnemyBullet" edge="1" parent="1" source="class_Dragon" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_EnemyBullet">
+          <mxGeometry relative="1" x="0.0237" as="geometry">
+            <Array as="points">
+              <mxPoint x="627.5" y="2220" />
+              <mxPoint x="20" y="2220" />
+              <mxPoint x="20" y="150.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dependency_player_bullet" edge="1" parent="1" source="class_player" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_bullet">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="dependency_Field_Enemy" edge="1" parent="1" source="class_Field" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_Enemy">
+          <mxGeometry relative="1" x="-0.0025" as="geometry">
+            <Array as="points">
+              <mxPoint x="627.5" y="460" />
+              <mxPoint x="40" y="460" />
+              <mxPoint x="40" y="1260.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dependency_Field_Obstacle" edge="1" parent="1" source="class_Field" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_Obstacle">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="830" y="240.5" />
+              <mxPoint x="830" y="1250.5" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dependency_Field_Platform" edge="1" parent="1" source="class_Field" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_Platform">
+          <mxGeometry relative="1" x="-0.0034" as="geometry">
+            <Array as="points">
+              <mxPoint x="627.5" y="460" />
+              <mxPoint x="890" y="460" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="dependency_EnemyBullet_player" edge="1" parent="1" source="class_EnemyBullet" style="edgeStyle=orthogonalEdgeStyle;dashed=1;html=1;endArrow=open;strokeColor=#b36b28;" target="class_player">
+          <mxGeometry relative="1" x="0.0022" as="geometry">
+            <Array as="points">
+              <mxPoint x="227.5" y="570" />
+              <mxPoint x="1827.5" y="570" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nVBcFXuS1nePF6LdRNkY-2" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;HorizontalPlatform&lt;/div&gt;&lt;hr&gt;-HorizontalSpeed: float&lt;br&gt;&lt;hr&gt;#Move(float delta): void" vertex="1">
+          <mxGeometry height="101" width="355" x="1750" y="1520" as="geometry" />
+        </mxCell>
+        <mxCell id="nVBcFXuS1nePF6LdRNkY-4" edge="1" parent="1" source="nVBcFXuS1nePF6LdRNkY-2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0;exitY=0.5;exitDx=0;exitDy=0;" target="class_Platform">
+          <mxGeometry relative="1" x="-0.504" as="geometry">
+            <mxPoint x="1932" y="1610" as="sourcePoint" />
+            <mxPoint x="1440" y="1520" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="nVBcFXuS1nePF6LdRNkY-5" edge="1" parent="1" source="class_Zombie" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" target="class_GroundEnemy" value="">
+          <mxGeometry relative="1" x="-0.3775" as="geometry">
+            <Array as="points">
+              <mxPoint x="1437.5" y="2080" />
+              <mxPoint x="617.5" y="2080" />
+            </Array>
+            <mxPoint x="2628" y="2340" as="sourcePoint" />
+            <mxPoint x="830" y="2050" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="class_FlyingObstacle" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;FlyingObstacle&lt;/div&gt;&lt;hr/&gt;-SpawnX: float&lt;br/&gt;-MinSpawnY: float&lt;br/&gt;-MaxSpawnY: float&lt;br/&gt;&lt;hr/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;" vertex="1">
+          <mxGeometry height="141" width="355" x="850" y="1760" as="geometry" />
+        </mxCell>
+        <mxCell id="class_GroundEnemy" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;spacing=9;fillColor=#eaf2ff;strokeColor=#3b5998;fontColor=#172b4d;" value="&lt;div style=&quot;font-size:15px;font-weight:bold;text-align:center&quot;&gt;GroundEnemy&lt;/div&gt;&lt;hr/&gt;-SpawnX: float&lt;br/&gt;-SpawnY: float&lt;br/&gt;&lt;hr/&gt;+GetSpawnPosition(): Vector2&lt;br/&gt;" vertex="1">
+          <mxGeometry height="121" width="355" x="440" y="1770" as="geometry" />
+        </mxCell>
+        <mxCell id="nVBcFXuS1nePF6LdRNkY-7" edge="1" parent="1" source="class_FlyingObstacle" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;endArrow=block;endFill=0;endSize=16;strokeColor=#53657b;entryX=0.5;entryY=1;entryDx=0;entryDy=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;" target="class_Obstacle">
+          <mxGeometry relative="1" x="-0.2806" as="geometry">
+            <Array as="points">
+              <mxPoint x="1027.5" y="1540" />
+              <mxPoint x="627.5" y="1540" />
+            </Array>
+            <mxPoint x="1660.5" y="2099" as="sourcePoint" />
+            <mxPoint x="860.5" y="1630" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
