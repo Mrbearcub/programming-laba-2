@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://dj6dbfbbgcwkk"]
+
+[ext_resource type="Script" uid="uid://bgjkboxifmhqg" path="res://Scripts/Dragon.cs" id="1_jb4vs"]
+
+[sub_resource type="Gradient" id="Gradient_tofr1"]
+colors = PackedColorArray(0.77254903, 0.15686275, 0.12156863, 1, 0.6901961, 0.34901962, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fqxyq"]
+gradient = SubResource("Gradient_tofr1")
+fill_from = Vector2(0, 0.07225434)
+fill_to = Vector2(1, 1)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1h7m"]
+radius = 26.019224
+
+[node name="Dragon" type="Area2D" unique_id=556273947]
+script = ExtResource("1_jb4vs")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=320656985]
+scale = Vector2(0.8125, 0.84375)
+texture = SubResource("GradientTexture2D_fqxyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001154590]
+shape = SubResource("CircleShape2D_w1h7m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=486316114]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_On_Sreen_Exited"]

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://c5wtr4mc1c7iv"]
+
+[ext_resource type="Script" uid="uid://58ap1nnme2t1" path="res://Scripts/Saw.cs" id="1_jp1mk"]
+
+[sub_resource type="Gradient" id="Gradient_ddabk"]
+offsets = PackedFloat32Array(0, 0.008, 0.252, 0.48, 0.828, 1)
+colors = PackedColorArray(0, 0, 0, 1, 0.39771426, 0.39771426, 0.39771426, 1, 0.696, 0.696, 0.696, 1, 0.8047817, 0.72913086, 0.71740043, 1, 0.828, 0.828, 0.828, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_q8t1x"]
+gradient = SubResource("Gradient_ddabk")
+width = 55
+height = 55
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w1h7m"]
+radius = 26.019224
+
+[node name="Saw" type="Area2D" unique_id=556273947]
+script = ExtResource("1_jp1mk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2041787828]
+texture = SubResource("GradientTexture2D_q8t1x")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=2001154590]
+shape = SubResource("CircleShape2D_w1h7m")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=486316114]
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_On_Sreen_Exited"]

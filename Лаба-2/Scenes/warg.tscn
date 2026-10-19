@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://ciqa0acjcmxms"]
+
+[ext_resource type="Script" uid="uid://d1m83omueg1ei" path="res://Scripts/Warg.cs" id="1_f7qs3"]
+
+[sub_resource type="Gradient" id="Gradient_roy8y"]
+colors = PackedColorArray(0.6745098, 0.16862746, 0, 1, 0.67516524, 0.16904524, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fqxyq"]
+gradient = SubResource("Gradient_roy8y")
+fill_to = Vector2(0.3583815, 0.58381504)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8eqcp"]
+size = Vector2(68, 35)
+
+[node name="Warg" type="Area2D" unique_id=1440512249]
+script = ExtResource("1_f7qs3")
+Health = 15.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1719536900]
+position = Vector2(2, 11.5)
+scale = Vector2(1.1875, 0.609375)
+texture = SubResource("GradientTexture2D_fqxyq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=490701827]
+position = Vector2(2, 12.5)
+shape = SubResource("RectangleShape2D_8eqcp")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1163834610]
+position = Vector2(0, -13)
+rect = Rect2(-11, 8, 23, 21)
+
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_On_Sreen_Exited"]

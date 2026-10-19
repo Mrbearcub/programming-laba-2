@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://dfm4202q7h0iv"]
+
+[ext_resource type="Script" uid="uid://cdk33tefwvxjh" path="res://Scripts/VerticalPlatform.cs" id="1_sdcgg"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_hf7dp"]
+radius = 0.9999997
+height = 154.0
+
+[sub_resource type="Gradient" id="Gradient_68h2w"]
+colors = PackedColorArray(0.41215247, 0.41215247, 0.41215247, 1, 0.6858353, 0.68583524, 0.6858352, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fqxyq"]
+gradient = SubResource("Gradient_68h2w")
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_fqxyq"]
+radius = 7.0
+height = 150.0
+
+[node name="VerticalPlatform" type="Area2D" unique_id=670959774]
+rotation = 1.5707964
+script = ExtResource("1_sdcgg")
+HorizontalSpeed = 80.0
+MinSpawnY = 100.0
+MaxSpawnY = 350.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=434418020]
+shape = SubResource("CapsuleShape2D_hf7dp")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1011804903]
+position = Vector2(-0.50000024, 0.50000095)
+scale = Vector2(0.234375, 2.390625)
+texture = SubResource("GradientTexture2D_fqxyq")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="." unique_id=1807392957]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=485163467]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=704821118]
+shape = SubResource("CapsuleShape2D_fqxyq")
